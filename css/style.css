@@ -211,10 +211,11 @@ body {
   font-size: 24px;
 }
 .mattress__list {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
 }
-.mattress__item {
+.mattress__list {
   position: relative;
 }
 .mattress__item-img {
@@ -228,19 +229,23 @@ body {
   transition: height 0.5s ease-in-out, width 0.5s ease-in-out;
   position: absolute;
   text-align: center;
-  top: 130px;
-}
-.mattress-active .mattress__item-text {
-  width: 500px;
-  height: 200px;
-  padding: 5px;
-  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 .mattress__item {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+.mattress-active .mattress__item-text {
+  width: 400px;
+  height: 150px;
+  padding: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 .mattress__item-title {
   text-align: center;
@@ -410,6 +415,12 @@ body {
   background-color: #000;
   width: 30px;
 }
+@media (max-width: 1000px) {
+  .mattress-active .mattress__item-text {
+    width: 190px;
+    height: 300px;
+  }
+}
 @media (max-width: 700px) {
   .question__title {
     font-size: 25px;
@@ -422,6 +433,12 @@ body {
   }
 }
 @media (max-width: 600px) {
+  .mattress__item-text {
+    font-size: 14px;
+  }
+  .mattress-active .mattress__item-text {
+    font-size: 14px;
+  }
   .header__inner {
     flex-wrap: wrap;
     justify-content: center;
@@ -435,6 +452,25 @@ body {
   .top {
     padding-top: 340px;
   }
+  .types__title {
+    margin-bottom: 35px;
+  }
+  .mattress__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    padding-bottom: 10px;
+  }
+  .mattress__item-img {
+    width: 50%;
+  }
+  .mattress__item-title {
+    font-size: 11px;
+  }
+  .mattress-active .mattress__item-text {
+    top: 136%;
+    width: 100%;
+    height: 150px;
+  }
 }
 @media (max-width: 460px) {
   .menu__list {
@@ -443,8 +479,8 @@ body {
     justify-content: space-around;
   }
 }
-@media (max-width: 390px) {
-  .dropdown {
+@media (max-width: 395px) {
+  .menu__list-item:nth-child(3) {
     order: 3;
   }
 }
