@@ -415,6 +415,11 @@ body {
   background-color: #000;
   width: 30px;
 }
+@media (max-width: 1150px) {
+  .advice__inner-img {
+    width: 50%;
+  }
+}
 @media (max-width: 1000px) {
   .mattress-active .mattress__item-text {
     width: 190px;
@@ -425,7 +430,9 @@ body {
   .question__title {
     font-size: 25px;
   }
-  .question__textbox-text {
+  .question__textbox-text,
+  .mattress__item-text,
+  .advice__inner-text {
     font-size: 14px;
   }
   .question__inner-img {
@@ -470,6 +477,10 @@ body {
     top: 136%;
     width: 100%;
     height: 150px;
+  }
+  .advice__inner-img:nth-child(3),
+  .advice__inner-img:nth-child(4) {
+    padding: 0;
   }
 }
 @media (max-width: 460px) {
